@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Public+Sans:400,600i,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1,
+        h3,
+        .contact-info {
+            text-align: center;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .languages,
+        .tools {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .company {
+            font-weight: 900;
+        }
+
+        .years {
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .title {
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .languages,
+            .tools {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            .languages,
+            .tools {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 300px) {
+
+            .languages,
+            .tools {
+                grid-template-columns: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chris Vega</h1>
+
+    <div class="contact-info">
+        <a href="mailto:chris@vega.codes">chris@vega.codes</a><br />
+        <a href="tel:+1-949-632-7484">(949) 632-7484</a><br />
+        <a href="https://www.linkedin.com/in/christopherjevega">linkedin.com/in/christopherjevega</a><br />
+    </div>
+
+    <h3>Programming & Markup Languages I've Shipped Code In</h3>
+
+    <ul class="languages">
+        <li>Bash</li>
+        <li>Dart</li>
+        <li>JavaScript</li>
+        <li>Kotlin</li>
+        <li>Python</li>
+        <li>Ruby</li>
+        <li>Swift</li>
+        <li>TypeScript</li>
+        <li>YAML</li>
+    </ul>
+
+    <h3>Frameworks & Tools I've Used</h3>
+
+    <ul class="tools">
+        <li>Capybara</li>
+        <li>CircleCI</li>
+        <li>Cucumber</li>
+        <li>Cypress</li>
+        <li>Docker</li>
+        <li>Espresso</li>
+        <li>Flutter</li>
+        <li>Git</li>
+        <li>GitHub</li>
+        <li>GitLab</li>
+        <li>Helm</li>
+        <li>Kubernetes</li>
+        <li>Locust</li>
+        <li>RSpec</li>
+        <li>Selenium</li>
+        <li>Sinatra</li>
+        <li>SitePrism</li>
+        <li>XCTest</li>
+    </ul>
+
+    <h3>Work Experience</h3>
+
+    <span class="company">Azlo</span> <span class="years">(2019 - 2020)</span><br />
+    <span class="title">Senior Quality Assurance Engineer</span>
+
+    <ul>
+        <li>Rewrote all preexisting iOS UI tests in Swift using XCTest and tripled the suite's coverage.
+        <li>Doubled the iOS app's unit testing coverage.
+        <li>Automated the process of setting up the iOS app repository locally using Bash.
+        <li>Rewrote all iOS build and test jobs in GitLab CI/CD to make builds more repeatable and ensure unit and UI
+            tests run more regularly and reliably.
+        <li>Rewrote all automation covering Azlo's customer onboarding web application in TypeScript using Cypress,
+            reducing the suite's test code by more than two-thirds while improving its accuracy, coverage, and
+            reliability.
+        <li>Combined all Cypress test automation suites into a single monorepo and reintegrated it into Azlo's web
+            applications as a git subtree, replete with bespoke tooling.
+        <li>Implemented scripts in Bash enabling all Cypress test automation suites to execute with an arbitrary level
+            of parallelization, both locally and in GitLab CI/CD.
+        <li>Rewrote all Cypress jobs run in GitLab CI/CD to run in parallel and cache dependencies to optimize execution
+            time and retryability.
+        <li>Implemented Android instrumentation tests in Kotlin using Espresso.
+    </ul>
+
+    <span class="company">Green Bits</span> <span class="years">(2018 - 2019)</span><br />
+    <span class="title">Senior Quality Assurance Engineer & Quality Lead</span>
+
+    <ul>
+        <li>Designed and implemented automated testing suites for all Green Bits web applications in Ruby using
+            Capybara, Cucumber, RSpec, Selenium, and SitePrism.
+        <li>Prototyped a Flutter automated testing suite in Dart.
+        <li>Implemented automated iOS tests in Swift using XCTest.
+        <li>Automated deployments to Kubernetes test and staging environments using Bash, CircleCI, and Helm.
+        <li>Implemented load tests in Python using Locust.
+        <li>Containerized test harnesses using Docker.
+        <li>Composed per-commit, post-deploy, hourly, and nightly CircleCI test jobs and workflows.
+        <li>Designed and implemented tooling to automate dozens of common tasks required to create, manipulate, and
+            delete test data in Ruby.
+    </ul>
+
+    <span class="company">Simple Finance</span> <span class="years">(2016 - 2018)</span><br />
+    <span class="title">Quality Assurance Engineer</span>
+
+    <ul>
+        <li>Rewrote all preexisting automated web testing coverage in accordance with behavior-driven development
+            principles in Ruby using Capybara, Cucumber, RSpec, and Selenium.
+        <li>Designed and implemented a custom Page Object Model framework from scratch and rewrote all automated web
+            testing coverage to make use of said framework.
+        <li>Extended automated test coverage to include all of Simple's web applications and increased the number of use
+            cases covered by more than seven times.
+        <li>Designed and implemented tools automating dozens of common tasks required to create, manipulate, and delete
+            test data in both Python and Ruby.
+        <li>Monitored backend and third-party API integrations in Simple's test environment for regressions and
+            availability concerns.
+        <li>Prototyped mock API servers and web applications in Ruby using Sinatra.
+    </ul>
+
+</body>
+
+</html>
