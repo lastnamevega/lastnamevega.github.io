@@ -7,10 +7,11 @@
     <style>
         body {
             font-family: 'Public Sans', sans-serif;
-            max-width: 600px;
             font-size: 18px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
         }
 
         h1,
@@ -27,39 +28,22 @@
         .languages,
         .tools {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: none;
         }
 
+        h1,
+        h3,
         .company {
             font-weight: 900;
         }
 
+        .title,
         .years {
-            font-weight: 600;
             font-style: italic;
-        }
-
-        .title {
             font-weight: 600;
-            font-style: italic;
         }
 
-        @media screen and (max-width: 600px) {
-            body {
-                margin-left: 1rem;
-                margin-right: 1rem;
-            }
-        }
-
-        @media screen and (max-width: 500px) {
-
-            .languages,
-            .tools {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-        }
-
-        @media screen and (max-width: 400px) {
+        @media only screen and (min-width: 350px) {
 
             .languages,
             .tools {
@@ -67,11 +51,27 @@
             }
         }
 
-        @media screen and (max-width: 300px) {
+        @media only screen and (min-width: 475px) {
 
             .languages,
             .tools {
-                grid-template-columns: none;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media only screen and (min-width: 600px) {
+
+            .languages,
+            .tools {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        @media only screen and (min-width: 625px) {
+            body {
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     </style>
@@ -178,7 +178,6 @@
             availability concerns.
         <li>Prototyped mock API servers and web applications in Ruby using Sinatra.
     </ul>
-
 </body>
 
 </html>
