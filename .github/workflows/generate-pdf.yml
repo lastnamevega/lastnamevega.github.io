@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: sudo apt update && sudo apt install wkhtmltopdf
-      - run: wkhtmltopdf index.html resume.pdf
+      - run: sudo apt update && sudo apt install xvfb wkhtmltopdf
+      - run: xvfb-run --auto-servernum wkhtmltopdf index.html resume.pdf
       - uses: actions/upload-artifact@v2
         with:
           name: Resume
