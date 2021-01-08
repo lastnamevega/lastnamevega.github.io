@@ -1,0 +1,17 @@
+name: Generate PDF
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: sudo apt install wkhtmltopdf
+      - run: wkhtmltopdf index.html resume.pdf
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Resume
+          path: resume.pdf
