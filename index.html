@@ -1,193 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
+  <head>
     <title>Chris Vega - Software QA Engineer</title>
-    <link href="https://fonts.googleapis.com/css?family=Public+Sans:400,600i,900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Public+Sans:400,600i,900&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      body {
+        font-family: 'Public Sans', sans-serif;
+        margin: 3rem 1rem;
+        max-width: 600px;
+      }
+
+      h1,
+      h3,
+      .contact-info {
+        text-align: center;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      .languages,
+      .tools {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+      }
+
+      h1,
+      h3,
+      .company {
+        font-weight: 900;
+      }
+
+      .title,
+      .years {
+        font-style: italic;
+        font-weight: 600;
+      }
+
+      @media only screen and (min-width: 625px) {
         body {
-            font-family: 'Public Sans', sans-serif;
-            margin: 3rem 1rem;
-            max-width: 600px;
+          margin: 3rem auto;
         }
+      }
 
-        h1,
-        h3,
-        .contact-info {
-            text-align: center;
+      @media only print {
+        body {
+          margin: none;
+          max-width: none;
         }
-
-        a {
-            color: black;
-            text-decoration: none;
-        }
-
-        .languages,
-        .tools {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-        }
-
-        h1,
-        h3,
-        .company {
-            font-weight: 900;
-        }
-
-        .title,
-        .years {
-            font-style: italic;
-            font-weight: 600;
-        }
-
-        @media only screen and (min-width: 625px) {
-            body {
-                margin: 3rem auto;
-            }
-        }
-
-        @media only print {
-            body {
-                margin: none;
-                max-width: none
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Chris Vega</h1>
 
     <div class="contact-info">
-        <a href="mailto:oldmanvega@gmail.com">oldmanvega@gmail.com</a><br />
-        <a href="tel:+1-949-632-7484">(949) 632-7484</a><br />
-        <a href="https://www.linkedin.com/in/christopherjevega">linkedin.com/in/christopherjevega</a><br />
+      <a href="mailto:oldmanvega@gmail.com">oldmanvega@gmail.com</a><br />
+      <a href="tel:+1-949-632-7484">(949) 632-7484</a><br />
+      <a href="https://www.linkedin.com/in/christopherjevega"
+        >linkedin.com/in/christopherjevega</a
+      ><br />
     </div>
 
     <h3>Programming & Markup Languages I've Shipped Code In</h3>
 
     <ul class="languages">
-        <li>Bash</li>
-        <li>Dart</li>
-        <li>Groovy</li>
-        <li>Java</li>
-        <li>JavaScript</li>
-        <li>Kotlin</li>
-        <li>Python</li>
-        <li>Ruby</li>
-        <li>SQL</li>
-        <li>Swift</li>
-        <li>TypeScript</li>
-        <li>YAML</li>
+      <li>Bash</li>
+      <li>Dart</li>
+      <li>Groovy</li>
+      <li>Java</li>
+      <li>JavaScript</li>
+      <li>Kotlin</li>
+      <li>Python</li>
+      <li>Ruby</li>
+      <li>SQL</li>
+      <li>Swift</li>
+      <li>TypeScript</li>
+      <li>YAML</li>
     </ul>
 
     <h3>Frameworks & Tools I've Used</h3>
 
     <ul class="tools">
-        <li>Capybara</li>
-        <li>CircleCI</li>
-        <li>Cucumber</li>
-        <li>Cypress</li>
-        <li>Docker</li>
-        <li>Espresso</li>
-        <li>Flutter</li>
-        <li>Git</li>
-        <li>GitHub</li>
-        <li>GitLab</li>
-        <li>Helm</li>
-        <li>Kubernetes</li>
-        <li>Locust</li>
-        <li>Make</li>
-        <li>Pytest</li>
-        <li>RSpec</li>
-        <li>Selenium</li>
-        <li>Sinatra</li>
-        <li>SitePrism</li>
-        <li>XCTest</li>
+      <li>Capybara</li>
+      <li>CircleCI</li>
+      <li>Cucumber</li>
+      <li>Cypress</li>
+      <li>Docker</li>
+      <li>Espresso</li>
+      <li>Flutter</li>
+      <li>Git</li>
+      <li>GitHub</li>
+      <li>GitLab</li>
+      <li>Helm</li>
+      <li>Kubernetes</li>
+      <li>Locust</li>
+      <li>Make</li>
+      <li>Pytest</li>
+      <li>RSpec</li>
+      <li>Selenium</li>
+      <li>Sinatra</li>
+      <li>SitePrism</li>
+      <li>XCTest</li>
     </ul>
 
     <h3>Work Experience</h3>
 
-    <span class="company">Simple</span> <span class="years">(2020 - 2021)</span><br />
+    <span class="company">Simple</span> <span class="years">(2020 - 2021)</span
+    ><br />
     <span class="title">Quality Assurance Engineer</span>
 
     <ul>
-        <li>Created an API integration test harness in Python using Pytest and implemented over 100 positive and
-            negative test cases across 11 microservices.
-        <li>Facilitated weekly workshops covering various software development concepts and practices, including
-            continuous integration/delivery (CI/CD), unit testing, shell scripting, and multiplatform development.
-        <li>Provided the QA team with technical leadership, reviewing all pull requests submitted by other members of
-            the team and pair-programming with more junior QA Engineers and Analysts on a weekly basis.
-        <li>Increased the Android app's Espresso test coverage in Kotlin by one-third.
-        <li>Reduced code duplication in QA's Cypress test harness by defining section objects which could then be reused
-            across multiple Page Object Models using object composition.
-        <li>Converted QA's Cypress test harness from JavaScript to TypeScript.
-        <li>Merged QA's two testing tooling repositories and increased the combined project's unit test coverage by more
-            than half.
-        <li>Combined all Cypress test automation harnesses into a single monorepo and reintegrated it into Simple's web
-            applications as a git submodule.
-        <li>Reimplemented all QA-owned repositories' Jenkins pipelines as GitHub Actions workflows.
-        <li>Containerized all QA-owned repositories using Docker.
-        <li>Migrated all QA-owned repositories from a GitHub Enterprise instance to GitHub Cloud.
+      <li>
+        Created an API integration test harness in Python using Pytest and
+        implemented over 100 positive and negative test cases across 11
+        microservices.
+      </li>
+
+      <li>
+        Facilitated weekly workshops covering various software development
+        concepts and practices, including continuous integration/delivery
+        (CI/CD), unit testing, shell scripting, and multiplatform development.
+      </li>
+
+      <li>
+        Provided the QA team with technical leadership, reviewing all pull
+        requests submitted by other members of the team and pair-programming
+        with more junior QA Engineers and Analysts on a weekly basis.
+      </li>
+
+      <li>
+        Increased the Android app's Espresso test coverage in Kotlin by
+        one-third.
+      </li>
+      <li>
+        Reduced code duplication in QA's Cypress test harness by defining
+        section objects which could then be reused across multiple Page Object
+        Models using object composition.
+      </li>
+
+      <li>
+        Converted QA's Cypress test harness from JavaScript to TypeScript.
+      </li>
+      <li>
+        Merged QA's two testing tooling repositories and increased the combined
+        project's unit test coverage by more than half.
+      </li>
+
+      <li>
+        Combined all Cypress test automation harnesses into a single monorepo
+        and reintegrated it into Simple's web applications as a git submodule.
+      </li>
+
+      <li>
+        Reimplemented all QA-owned repositories' Jenkins pipelines as GitHub
+        Actions workflows.
+      </li>
+      <li>Containerized all QA-owned repositories using Docker.</li>
+      <li>
+        Migrated all QA-owned repositories from a GitHub Enterprise instance to
+        GitHub Cloud.
+      </li>
     </ul>
 
-    <span class="company">Azlo</span> <span class="years">(2019 - 2020)</span><br />
+    <span class="company">Azlo</span> <span class="years">(2019 - 2020)</span
+    ><br />
     <span class="title">Senior Quality Assurance Engineer</span>
 
     <ul>
-        <li>Rewrote all automation covering Azlo's customer onboarding web application in TypeScript using Cypress,
-            reducing the suite's test code by more than two-thirds while improving its accuracy, coverage, and
-            reliability.
-        <li>Rewrote all preexisting iOS end-to-end tests in Swift using XCTest and tripled the suite's coverage.
-        <li>Tripled the Android app's instrumentation testing coverage in Kotlin using Cucumber and Espresso.
-        <li>Designed and implemented the first end-to-end test automation suite for Azlo's internal CRM web application
-            in TypeScript using Cypress.
-        <li>Doubled the iOS app's unit testing coverage.
-        <li>Implemented scripts in Bash enabling all Cypress test automation suites to execute with an arbitrary level
-            of parallelization, both locally and in GitLab CI/CD.
-        <li>Rewrote all Cypress jobs run in GitLab CI/CD to run in parallel and cache dependencies to optimize execution
-            time and retryability.
-        <li>Rewrote all iOS build and test jobs in GitLab CI/CD to make builds more repeatable and ensure unit and
-            end-to-end tests run more regularly and reliably.
-        <li>Combined all Cypress test automation suites into a single monorepo and reintegrated it into Azlo's web
-            applications as a git subtree, replete with bespoke tooling.
-        <li>Automated the process of setting up the iOS app repository locally using Bash.
+      <li>
+        Rewrote all automation covering Azlo's customer onboarding web
+        application in TypeScript using Cypress, reducing the suite's test code
+        by more than two-thirds while improving its accuracy, coverage, and
+        reliability.
+      </li>
+
+      <li>
+        Rewrote all preexisting iOS end-to-end tests in Swift using XCTest and
+        tripled the suite's coverage.
+      </li>
+      <li>
+        Tripled the Android app's instrumentation testing coverage in Kotlin
+        using Cucumber and Espresso.
+      </li>
+      <li>
+        Designed and implemented the first end-to-end test automation suite for
+        Azlo's internal CRM web application in TypeScript using Cypress.
+      </li>
+
+      <li>Doubled the iOS app's unit testing coverage.</li>
+      <li>
+        Implemented scripts in Bash enabling all Cypress test automation suites
+        to execute with an arbitrary level of parallelization, both locally and
+        in GitLab CI/CD.
+      </li>
+
+      <li>
+        Rewrote all Cypress jobs run in GitLab CI/CD to run in parallel and
+        cache dependencies to optimize execution time and retryability.
+      </li>
+
+      <li>
+        Rewrote all iOS build and test jobs in GitLab CI/CD to make builds more
+        repeatable and ensure unit and end-to-end tests run more regularly and
+        reliably.
+      </li>
+
+      <li>
+        Combined all Cypress test automation suites into a single monorepo and
+        reintegrated it into Azlo's web applications as a git subtree, replete
+        with bespoke tooling.
+      </li>
+
+      <li>
+        Automated the process of setting up the iOS app repository locally using
+        Bash.
+      </li>
     </ul>
 
-    <span class="company">Green Bits</span> <span class="years">(2018 - 2019)</span><br />
+    <span class="company">Green Bits</span>
+    <span class="years">(2018 - 2019)</span><br />
     <span class="title">Senior Quality Assurance Engineer & Quality Lead</span>
 
     <ul>
-        <li>Designed and implemented automated testing suites for all Green Bits web applications in Ruby using
-            Capybara, Cucumber, RSpec, Selenium, and SitePrism.
-        <li>Implemented load tests in Python using Locust.
-        <li>Implemented automated iOS tests in Swift using XCTest.
-        <li>Implemented per-commit, post-deploy, hourly, and nightly CircleCI test jobs and workflows.
-        <li>Automated deployments to Kubernetes test and staging environments using Bash, CircleCI, and Helm.
-        <li>Designed and implemented tooling to automate dozens of common tasks required to create, manipulate, and
-            delete test data in Ruby.
-        <li>Prototyped a Flutter automated testing suite in Dart.
-        <li>Containerized test harnesses using Docker.
+      <li>
+        Designed and implemented automated testing suites for all Green Bits web
+        applications in Ruby using Capybara, Cucumber, RSpec, Selenium, and
+        SitePrism.
+      </li>
+
+      <li>Implemented load tests in Python using Locust.</li>
+      <li>Implemented automated iOS tests in Swift using XCTest.</li>
+      <li>
+        Implemented per-commit, post-deploy, hourly, and nightly CircleCI test
+        jobs and workflows.
+      </li>
+      <li>
+        Automated deployments to Kubernetes test and staging environments using
+        Bash, CircleCI, and Helm.
+      </li>
+      <li>
+        Designed and implemented tooling to automate dozens of common tasks
+        required to create, manipulate, and delete test data in Ruby.
+      </li>
+
+      <li>Prototyped a Flutter automated testing suite in Dart.</li>
+      <li>Containerized test harnesses using Docker.</li>
     </ul>
 
-    <span class="company">Simple Finance</span> <span class="years">(2016 - 2018)</span><br />
+    <span class="company">Simple Finance</span>
+    <span class="years">(2016 - 2018)</span><br />
     <span class="title">Quality Assurance Engineer</span>
 
     <ul>
-        <li>Rewrote all preexisting automated web testing coverage in accordance with behavior-driven development
-            principles in Ruby using Capybara, Cucumber, RSpec, and Selenium.
-        <li>Designed and implemented a custom Page Object Model framework from scratch and rewrote all automated web
-            testing coverage to make use of said framework.
-        <li>Extended automated test coverage to include all of Simple's web applications and increased the number of use
-            cases covered by more than seven times.
-        <li>Designed and implemented tools automating dozens of common tasks required to create, manipulate, and delete
-            test data in both Python and Ruby.
-        <li>Monitored backend and third-party API integrations in Simple's test environment for regressions and
-            availability concerns.
-        <li>Prototyped mock API servers and web applications in Ruby using Sinatra.
-    </ul>
-</body>
+      <li>
+        Rewrote all preexisting automated web testing coverage in accordance
+        with behavior-driven development principles in Ruby using Capybara,
+        Cucumber, RSpec, and Selenium.
+      </li>
 
+      <li>
+        Designed and implemented a custom Page Object Model framework from
+        scratch and rewrote all automated web testing coverage to make use of
+        said framework.
+      </li>
+
+      <li>
+        Extended automated test coverage to include all of Simple's web
+        applications and increased the number of use cases covered by more than
+        seven times.
+      </li>
+
+      <li>
+        Designed and implemented tools automating dozens of common tasks
+        required to create, manipulate, and delete test data in both Python and
+        Ruby.
+      </li>
+
+      <li>
+        Monitored backend and third-party API integrations in Simple's test
+        environment for regressions and availability concerns.
+      </li>
+
+      <li>
+        Prototyped mock API servers and web applications in Ruby using Sinatra.
+      </li>
+    </ul>
+  </body>
 </html>
