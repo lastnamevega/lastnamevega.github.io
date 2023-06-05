@@ -11,7 +11,7 @@
     />
     <style>
       body {
-        font-family: 'Public Sans', sans-serif;
+        font-family: "Public Sans", sans-serif;
         margin: 3rem 1rem;
         max-width: 600px;
       }
@@ -85,16 +85,16 @@
 
     <ul class="tools">
       <li>Artillery</li>
+      <li>AWS</li>
       <li>Bitbucket</li>
-      <li>Chai</li>
       <li>Cypress</li>
       <li>Docker</li>
       <li>Git</li>
       <li>Jest</li>
-      <li>Mocha</li>
       <li>Percy</li>
       <li>SuperTest</li>
       <li>Terraform</li>
+      <li>Terragrunt</li>
     </ul>
 
     <h3>Work Experience</h3>
@@ -105,11 +105,12 @@
 
     <ul>
       <li>
-        Designed Trove's Continuous Delivery process, drafting step-by-step
-        documentation in the form of both flowcharts and written documentation.
-        Trained Software, QA, and Release Engineers on the new process and
-        worked with Engineering leadership to incrementally migrate codebases to
-        the Continuous Delivery model.
+        Designed and implemented Trove's Continuous Delivery process. Trained
+        Software, QA, and Release Engineers on the new process and worked with
+        Engineering leadership to incrementally migrate codebases to the
+        Continuous Delivery release model. Adoption of this process resulted in
+        a ~30% improvement in Trove Engineering's median cycle time and 12-fold
+        increase in the number of weekly software deployments.
       </li>
 
       <li>
@@ -117,21 +118,19 @@
       </li>
 
       <li>
-        Drafted KPIs for Trove's Engineering organization, proposing metrics to
-        gather, reporting tools to use, and goals to target to a
-        cross-functional decision-making body before ratification.
-      </li>
-
-      <li>
-        Parallelized deployments to remote environments, improving pipeline
-        execution times by up to 37.5%.
+        Parallelized deployments to AWS EC2 and ECS environments, improving
+        CI/CD pipeline execution times by up to 37.5%.
       </li>
 
       <li>
         Reworked Trove's Docker image build process to produce immutable
-        artifacts to be used when deploying to all remote environments. In doing
-        so, deduplicated deployment pipeline build steps, improving pipeline
-        execution times by 37.5-43%.
+        artifacts to be used when deploying to all remote environments. Improved
+        CI/CD pipeline execution times by 37.5-43% as a result.
+      </li>
+
+      <li>
+        Optimized Trove's Docker images, reducing their average size by ~41% and
+        improving build pipelines' runtimes by 10-17%.
       </li>
 
       <li>
@@ -141,16 +140,42 @@
       </li>
 
       <li>
-        Implemented test coverage enforcement and metrics collection for all
-        Trove codebases. Published test coverage reports to AWS S3 for each
-        codebase following every test execution in CI. Generated aggregated test
-        coverage CSV and HTML reports and regularly presented on Engineering's
-        progress to leadership.
+        Designed and implemented a reusable Terraform module which enabled
+        Engineers to define a new AWS Batch job definition in fewer than 30
+        lines of Terragrunt code.
+      </li>
+
+      <li>
+        Designed and implemented job execution pipelines to run on both EC2 and
+        ECS Fargate AWS infrastructure using SSM and Batch, respectively.
+      </li>
+
+      <li>
+        Added support for integrating AWS ECS services with New Relic APM using
+        a single line of code with Terraform and Terragrunt.
+      </li>
+
+      <li>
+        Implemented AWS SQS queues and supporting IAM policy changes and
+        CloudWatch alarms in Terraform.
       </li>
 
       <li>
         Implemented pre-push hooks and CI pipelines enforcing linting and
         versioning best practices for multiple Trove codebases.
+      </li>
+
+      <li>
+        Defined KPIs for Trove's Engineering organization, specifying metrics to
+        gather, reporting tools to use, and goals to target.
+      </li>
+
+      <li>
+        Implemented test coverage enforcement and metrics collection for all
+        Trove codebases. Published test coverage reports to AWS S3 for each
+        codebase following every test execution in CI. Generated aggregated test
+        coverage CSV and HTML reports and regularly presented on Engineering's
+        progress to leadership.
       </li>
 
       <li>
@@ -229,8 +254,8 @@
       </li>
 
       <li>
-        Implemented load and performance test coverage and their corresponding
-        CI pipelines using Artillery and Bitbucket Pipelines.
+        Implemented load and performance test coverage and related CI pipelines
+        using Artillery and Bitbucket Pipelines.
       </li>
 
       <li>
