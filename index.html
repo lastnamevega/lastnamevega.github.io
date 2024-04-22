@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -75,7 +75,6 @@
 
     <ul class="languages">
       <li>Bash</li>
-      <li>HCL</li>
       <li>JavaScript</li>
       <li>TypeScript</li>
       <li>YAML</li>
@@ -84,22 +83,73 @@
     <h3>Frameworks & Tools I've Used Recently</h3>
 
     <ul class="tools">
-      <li>Artillery</li>
-      <li>AWS</li>
-      <li>Bitbucket</li>
-      <li>Cypress</li>
-      <li>Docker</li>
+      <li>Auth0</li>
+      <li>Bun</li>
+      <li>DataDog</li>
       <li>Git</li>
+      <li>GitHub</li>
+      <li>GitHub Actions</li>
       <li>Jest</li>
-      <li>Percy</li>
-      <li>SuperTest</li>
-      <li>Terraform</li>
-      <li>Terragrunt</li>
+      <li>K6</li>
+      <li>Okta</li>
+      <li>Playwright</li>
     </ul>
 
     <h3>Work Experience</h3>
 
-    <span class="company">Trove</span> <span class="years">(2022 - Present)</span
+    <span class="company">Indigov</span>
+    <span class="years">(2023 - Present)</span><br />
+    <span class="title">Senior SDET</span>
+
+    <ul>
+      <li>
+        Built Indigov's end-to-end Playwright test harness up from a handful of
+        automated test cases to multiple hundreds.
+      </li>
+      <li>
+        Doubled Indigov's K6 load and performance test coverage. Regularly
+        reported all findings identified with the help of DataDog application
+        performance monitoring.
+      </li>
+      <li>
+        Rewrote Indigov's K6 test harness in TypeScript. Implemented a custom
+        bundling solution using Bun in support of doing so.
+      </li>
+      <li>
+        Implemented GitHub Actions workflows for executing load and performance
+        K6 tests against feature branches, on <code>cron</code> schedules, and
+        ad hoc via GitHub Actions' graphical and command-line interfaces.
+      </li>
+      <li>
+        Updated Indigov's Playwright harness to execute tests in parallel across
+        multiple GitHub Actions runners to improve execution times.
+      </li>
+      <li>
+        Mentored Indigov's manual QA Engineer on a twice-weekly basis, coaching
+        them through the process of implementing new and updated automated test
+        coverage using Playwright.
+      </li>
+      <li>
+        Implemented feature flagging of all outbound email traffic,
+        conditionally routing emails to SparkPost's sink server to avoid leaking
+        test data.
+      </li>
+      <li>
+        Integrated Indigov's K6 load and performance test harness with Auth0's
+        and Okta's client credentials authentication flows. Leveraged said flows
+        to simulate SparkPost inbound email webhooks and test their ingestion.
+      </li>
+      <li>
+        Migrated Indigov's Playwright and K6 test harnesses from Auth0 to Okta
+        authentication.
+      </li>
+      <li>
+        Configured coverage collection and enforcement for all executions of
+        Indigov's unit and database integration Jest test harness in CI.
+      </li>
+    </ul>
+
+    <span class="company">Trove</span> <span class="years">(2022 - 2023)</span
     ><br />
     <span class="title">Staff Software Engineer II</span>
 
