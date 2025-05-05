@@ -1,9 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Chris Vega - Senior SDET</title>
     <link
       href="https://fonts.googleapis.com/css?family=Public+Sans:400,600i,900&display=swap"
@@ -13,7 +12,7 @@
       body {
         font-family: "Public Sans", sans-serif;
         margin: 3rem 1rem;
-        max-width: 600px;
+        max-width: 700px;
       }
 
       h1,
@@ -31,6 +30,7 @@
       .tools {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        gap: 0.5rem;
       }
 
       h1,
@@ -45,6 +45,53 @@
         font-weight: 600;
       }
 
+      .work-experience {
+        margin-top: 2rem;
+      }
+
+      .dropdown {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        background: #fafbfc;
+        box-shadow: 0 2px 6px #0001;
+      }
+
+      .dropdown-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 1rem;
+        font-size: 1.1rem;
+        background: #f3f4f6;
+        border-radius: 8px 8px 0 0;
+        transition: background 0.2s;
+      }
+
+      .dropdown-header:hover {
+        background: #e5e7eb;
+      }
+
+      .dropdown-content {
+        padding: 1rem 1.5rem 1rem 1.5rem;
+        display: none;
+        animation: fadeIn 0.3s;
+      }
+
+      .dropdown.open .dropdown-content {
+        display: block;
+      }
+
+      .dropdown .arrow {
+        font-size: 1.2em;
+        transition: transform 0.2s;
+      }
+
+      .dropdown.open .arrow {
+        transform: rotate(90deg);
+      }
+
       @media only screen and (min-width: 625px) {
         body {
           margin: 3rem auto;
@@ -53,16 +100,58 @@
 
       @media only print {
         body {
-          margin: none;
+          margin: 0;
           max-width: none;
         }
+
+        .dropdown-content {
+          display: block !important;
+          padding-top: 0.2em !important;
+          margin-top: 0 !important;
+        }
+
+        .dropdown-header {
+          pointer-events: none;
+          background: #f3f4f6 !important;
+          padding-bottom: 0.2em !important;
+          margin-bottom: 0 !important;
+        }
+
+        .arrow {
+          display: none;
+        }
+
+        .dropdown {
+          border: none !important;
+          box-shadow: none !important;
+          background: none !important;
+          margin-bottom: 0.3em !important;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .languages li,
+      .tools li {
+        line-height: 1;
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+        padding-top: 0;
+        padding-bottom: 0;
       }
     </style>
   </head>
 
   <body>
     <h1>Chris Vega</h1>
-
     <div class="contact-info">
       <a href="mailto:oldmanvega@gmail.com">oldmanvega@gmail.com</a><br />
       <a href="tel:+1-949-632-7484">(949) 632-7484</a><br />
@@ -72,7 +161,6 @@
     </div>
 
     <h3>Programming Languages</h3>
-
     <ul class="languages">
       <li>JavaScript</li>
       <li>Python</li>
@@ -81,7 +169,6 @@
     </ul>
 
     <h3>Frameworks & Tools</h3>
-
     <ul class="tools">
       <li>Cypress</li>
       <li>DataDog</li>
@@ -102,404 +189,208 @@
     </ul>
 
     <h3>Work Experience</h3>
+    <div id="work-experience-root" class="work-experience"></div>
 
-    <span class="company">Indigov</span>
-    <span class="years">(2023 - Present)</span><br />
-    <span class="title">Senior SDET</span>
+    <!-- React and ReactDOM via CDN -->
+    <script
+      src="https://unpkg.com/react@18.2.0/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script>
+      const { useState, useEffect } = React;
 
-    <ul>
-      <li>
-        Built Indigov's end-to-end Playwright test harness up from a handful of
-        automated test cases to more than 350.
-      </li>
-      <li>
-        Tripled Indigov's K6 load and performance test coverage. Regularly
-        reported all findings identified with the help of DataDog application
-        performance and real user monitoring.
-      </li>
-      <li>
-        Rewrote Indigov's K6 test harness in TypeScript. Implemented a custom
-        bundling solution using Bun in support of doing so.
-      </li>
-      <li>
-        Implemented GitHub Actions workflows for executing load and performance
-        K6 tests against feature branches, on <code>cron</code> schedules, and
-        ad hoc via GitHub Actions' graphical and command-line interfaces.
-      </li>
-      <li>
-        Updated Indigov's Playwright harness to execute tests in parallel across
-        multiple GitHub Actions runners to reduce execution times from
-        approximately one hour to less than 15 minutes.
-      </li>
-      <li>
-        Mentored Indigov's manual QA Engineer on a twice-weekly basis, coaching
-        them through the process of implementing new and updated automated test
-        coverage using Playwright and Jest.
-      </li>
-      <li>
-        Implemented feature flagging of all outbound email traffic,
-        conditionally routing emails to SparkPost's sink server to avoid leaking
-        test data.
-      </li>
-      <li>
-        Integrated Indigov's K6 load and performance test harness with Auth0's
-        and Okta's client credentials authentication flows. Leveraged said flows
-        to simulate SparkPost inbound email webhooks and test their ingestion.
-      </li>
-      <li>
-        Migrated Indigov's Playwright and K6 test harnesses from Auth0 to Okta
-        authentication.
-      </li>
-      <li>
-        Configured coverage collection and enforcement for all executions of
-        Indigov's unit and database integration Jest test harness in CI.
-      </li>
-    </ul>
+      function WorkExperience({ company, years, title, bullets, defaultOpen }) {
+        const [open, setOpen] = useState(defaultOpen || false);
 
-    <span class="company">Trove</span> <span class="years">(2022 - 2023)</span
-    ><br />
-    <span class="title">Staff Software Engineer II</span>
+        // Expand all when printing
+        useEffect(() => {
+          function handleBeforePrint() {
+            setOpen(true);
+          }
+          window.addEventListener("beforeprint", handleBeforePrint);
+          return () =>
+            window.removeEventListener("beforeprint", handleBeforePrint);
+        }, []);
 
-    <ul>
-      <li>
-        Designed and implemented Trove's Continuous Delivery process. Trained
-        Software, QA, and Release Engineers on the new process and worked with
-        Engineering leadership to incrementally migrate codebases to the
-        Continuous Delivery release model. Adoption of this process resulted in
-        a ~30% improvement in Trove Engineering's median cycle time and 12-fold
-        increase in the number of weekly software deployments.
-      </li>
+        return React.createElement(
+          "div",
+          { className: `dropdown${open ? " open" : ""}` },
+          React.createElement(
+            "div",
+            {
+              className: "dropdown-header",
+              onClick: () => setOpen((o) => !o),
+            },
+            React.createElement(
+              "span",
+              null,
+              React.createElement("span", { className: "company" }, company),
+              " ",
+              React.createElement("span", { className: "years" }, years),
+              React.createElement("br", null),
+              React.createElement("span", { className: "title" }, title),
+            ),
+            React.createElement("span", { className: "arrow" }, "▶"),
+          ),
+          React.createElement(
+            "div",
+            { className: "dropdown-content" },
+            React.createElement(
+              "ul",
+              null,
+              bullets.map((b, i) =>
+                React.createElement("li", {
+                  key: i,
+                  dangerouslySetInnerHTML: { __html: b },
+                }),
+              ),
+            ),
+          ),
+        );
+      }
 
-      <li>
-        Implemented Continuous Delivery pipelines for all Trove codebases.
-      </li>
+      const experiences = [
+        {
+          company: "Indigov",
+          years: "(2023 - 2025)",
+          title: "Senior SDET",
+          bullets: [
+            "Built Indigov's end-to-end Playwright test harness up from a handful of automated test cases to more than 350.",
+            "Tripled Indigov's K6 load and performance test coverage. Regularly reported all findings identified with the help of DataDog application performance and real user monitoring.",
+            "Rewrote Indigov's K6 test harness in TypeScript. Implemented a custom bundling solution using Bun in support of doing so.",
+            "Implemented GitHub Actions workflows for executing load and performance K6 tests against feature branches, on cron schedules, and ad hoc via GitHub Actions' graphical and command-line interfaces.",
+            "Updated Indigov's Playwright harness to execute tests in parallel across multiple GitHub Actions runners to reduce execution times from approximately one hour to less than 15 minutes.",
+            "Mentored Indigov's manual QA Engineer on a twice-weekly basis, coaching them through the process of implementing new and updated automated test coverage using Playwright and Jest.",
+            "Implemented feature flagging of all outbound email traffic, conditionally routing emails to SparkPost's sink server to avoid leaking test data.",
+            "Integrated Indigov's K6 load and performance test harness with Auth0's and Okta's client credentials authentication flows. Leveraged said flows to simulate SparkPost inbound email webhooks and test their ingestion.",
+            "Migrated Indigov's Playwright and K6 test harnesses from Auth0 to Okta authentication.",
+            "Configured coverage collection and enforcement for all executions of Indigov's unit and database integration Jest test harness in CI.",
+          ],
+        },
+        {
+          company: "Trove",
+          years: "(2022 - 2023)",
+          title: "Staff Software Engineer II",
+          bullets: [
+            "Designed and implemented Trove's Continuous Delivery process. Trained Software, QA, and Release Engineers on the new process and worked with Engineering leadership to incrementally migrate codebases to the Continuous Delivery release model. Adoption of this process resulted in a ~30% improvement in Trove Engineering's median cycle time and 12 - fold increase in the number of weekly software deployments.",
+            "Implemented Continuous Delivery pipelines for all Trove codebases.",
+            "Parallelized deployments to AWS EC2 and ECS environments, improving CI/CD pipeline execution times by up to 37.5%.",
+            "Reworked Trove's Docker image build process to produce immutable artifacts to be used when deploying to all remote environments. Improved CI/CD pipeline execution times by 37.5-43% as a result.",
+            "Optimized Trove's Docker images, reducing their average size by ~41% and improving build pipelines' runtimes by 10-17%.",
+            "Implemented a custom Docker image to be used by all CI pipelines to execute common tasks like building Docker images, pushing images to AWS ECR, deploying builds to AWS ECS, and notifying Slack.",
+            "Designed and implemented a reusable Terraform module which enabled Engineers to define a new AWS Batch job definition in fewer than 30 lines of Terragrunt code.",
+            "Designed and implemented job execution pipelines to run on both EC2 and ECS Fargate AWS infrastructure using SSM and Batch, respectively.",
+            "Added support for integrating AWS ECS services with New Relic APM using a single line of code with Terraform and Terragrunt.",
+            "Improved CI/CD pipeline execution times by 37.5-43% as a result.",
+            "Defined KPIs for Trove's Engineering organization, specifying metrics to gather, reporting tools to use, and goals to target.",
+            "Implemented test coverage enforcement and metrics collection for all Trove codebases.Published test coverage reports to AWS S3 for each codebase following every test execution in CI.Generated aggregated test coverage CSV and HTML reports and regularly presented on Engineering's progress to leadership.",
+            "Implemented custom tooling which integrated with the Google Calendar API to measure and visualize how much time Engineering team members spent in meetings on a weekly basis.",
+          ],
+        },
+        {
+          company: "Trove",
+          years: "(2021 - 2022)",
+          title: "Staff Software Engineer in Test II",
+          bullets: [
+            "Led Test Automation team meetings, including refinement, planning, review, and retrospective agile ceremonies, as well as mob programming sessions.",
+            "Mentored manual QA Engineers, pair programming on a weekly basis while teaching them software development and test automation principles and best practices.",
+            "Designed and led the implementation of a bespoke Page Object Model pattern for all of Trove's end-to-end UI test coverage.",
+            "Designed and implemented Trove's first API contract and integration test harness.",
+            "Migrated the Test Automation team's codebase to a monorepo model, allowing for the addition of an arbitrary number of API, UI, and unit test harnesses. Extracted reusable components into a shared utility subpackage and implemented monorepo-wide static analysis and package management tooling.",
+            "Designed and implemented generic test automation suites which could be easily configured to test any of Trove's partner storefront and in-store trade-in web applications.",
+            "Worked with the Director of Software Quality Engineering to define OKRs for the Test Automation team, more than quadrupling Trove's UI and API test automation coverage over the course of a year.",
+            "Led the effort to implement unit test harnesses and CI test pipelines for all Trove codebases, more than pentupling test coverage in aggregate across all of Trove codebases over the course of a year.",
+            "Specified and led the Test Automation team's effort to migrate from JavaScript to TypeScript. Drafted documentation and implemented automated tooling to ease the migration. In total, a team of 5 migrated 33K lines of JavaScript to TypeScript over the course of 3 months without pausing any other workstreams.",
+            "Reworked the Test Automation team's technical interviewing process, providing candidates with a takehome coding challenge starting point which more accurately mirrored the daily work of Test Automation team members.",
+            "Implemented load and performance test coverage and related CI pipelines using Artillery and Bitbucket Pipelines.",
+            "Implemented visual diff test automation harnesses using Cypress and Percy.",
+          ],
+        },
+        {
+          company: "Simple",
+          years: "(2020 - 2021)",
+          title: "Quality Assurance Engineer",
+          bullets: [
+            "Created an API integration test harness in Python using Pytest and implemented over 100 positive and negative test cases across 11 microservices.",
+            "Facilitated weekly workshops covering various software development concepts and practices, including continuous integration / delivery(CI / CD), unit testing, shell scripting, and multiplatform development.",
+            "Provided the QA team with technical leadership, reviewing all pull requests submitted by other members of the team and pair- programming with more junior QA Engineers and Analysts on a weekly basis.",
+            "Increased the Android app's Espresso test coverage in Kotlin by one-third.",
+            "Reduced code duplication in QA's Cypress test harness by defining section objects which could then be reused across multiple Page Object Models using object composition.",
+            "Converted QA's Cypress test harness from JavaScript to TypeScript.",
+            "Merged QA's two testing tooling repositories and increased the combined project's unit test coverage by more than half.",
+            "Combined all Cypress test automation harnesses into a single monorepo and reintegrated it into Simple's web applications as a git submodule.",
+            "Reimplemented all QA-owned repositories' Jenkins pipelines as GitHub Actions workflows.",
+            "Containerized all QA-owned repositories using Docker.",
+            "Migrated all QA-owned repositories from a GitHub Enterprise instance to GitHub Cloud.",
+          ],
+        },
+        {
+          company: "Azlo",
+          years: "(2019 - 2020)",
+          title: "Senior Quality Assurance Engineer",
+          bullets: [
+            "Rewrote all automation covering Azlo's customer onboarding web application in TypeScript using Cypress, reducing the suite's test code by more than two-thirds while improving its accuracy, coverage, and reliability.",
+            "Rewrote all preexisting iOS end-to-end tests in Swift using XCTest and tripled the suite's coverage.",
+            "Tripled the Android app's instrumentation testing coverage in Kotlin using Cucumber and Espresso.",
+            "Designed and implemented the first end-to-end test automation suite for Azlo's internal CRM web application in TypeScript using Cypress.",
+            "Doubled the iOS app's unit testing coverage.",
+            "Implemented scripts in Bash enabling all Cypress test automation suites to execute with an arbitrary level of parallelization, both locally and in GitLab CI / CD.",
+            "Rewrote all Cypress jobs run in GitLab CI / CD to run in parallel and cache dependencies to optimize execution time and retryability.",
+            "Rewrote all iOS build and test jobs in GitLab CI / CD to make builds more repeatable and ensure unit and end-to-end tests run more regularly and reliably.",
+            "Combined all Cypress test automation suites into a single monorepo and reintegrated it into Azlo's web applications as a git subtree, replete with bespoke tooling.",
+            "Automated the process of setting up the iOS app repository locally using Bash.",
+          ],
+        },
+        {
+          company: "Green Bits",
+          years: "(2018 - 2019)",
+          title: "Senior Quality Assurance Engineer & Quality Lead",
+          bullets: [
+            "Designed and implemented automated testing suites for all Green Bits web applications in Ruby using Capybara, Cucumber, RSpec, Selenium, and SitePrism.",
+            "Implemented load tests in Python using Locust.",
+            "Implemented automated iOS tests in Swift using XCTest.",
+            "Implemented per-commit, post-deploy, hourly, and nightly CircleCI test jobs and workflows.",
+            "Automated deployments to Kubernetes test and staging environments using Bash, CircleCI, and Helm.",
+            "Designed and implemented tooling to automate dozens of common tasks required to create, manipulate, and delete test data in Ruby.",
+            "Prototyped a Flutter automated testing suite in Dart.",
+            "Containerized test harnesses using Docker.",
+          ],
+        },
+        {
+          company: "Simple",
+          years: "(2016 - 2018)",
+          title: "Quality Assurance Engineer",
+          bullets: [
+            "Rewrote all preexisting automated web testing coverage in accordance with behavior-driven development principles in Ruby using Capybara, Cucumber, RSpec, and Selenium.",
+            "Designed and implemented a custom Page Object Model framework from scratch and rewrote all automated web testing coverage to make use of said framework.",
+            "Extended automated test coverage to include all of Simple's web applications and increased the number of use cases covered by more than seven times.",
+            "Designed and implemented tools automating dozens of common tasks required to create, manipulate, and delete test data in both Python and Ruby.",
+            "Monitored backend and third-party API integrations in Simple's test environment for regressions and availability concerns.",
+            "Prototyped mock API servers and web applications in Ruby using Sinatra.",
+          ],
+        },
+      ];
 
-      <li>
-        Parallelized deployments to AWS EC2 and ECS environments, improving
-        CI/CD pipeline execution times by up to 37.5%.
-      </li>
-
-      <li>
-        Reworked Trove's Docker image build process to produce immutable
-        artifacts to be used when deploying to all remote environments. Improved
-        CI/CD pipeline execution times by 37.5-43% as a result.
-      </li>
-
-      <li>
-        Optimized Trove's Docker images, reducing their average size by ~41% and
-        improving build pipelines' runtimes by 10-17%.
-      </li>
-
-      <li>
-        Implemented a custom Docker image to be used by all CI pipelines to
-        execute common tasks like building Docker images, pushing images to AWS
-        ECR, deploying builds to AWS ECS, and notifying Slack.
-      </li>
-
-      <li>
-        Designed and implemented a reusable Terraform module which enabled
-        Engineers to define a new AWS Batch job definition in fewer than 30
-        lines of Terragrunt code.
-      </li>
-
-      <li>
-        Designed and implemented job execution pipelines to run on both EC2 and
-        ECS Fargate AWS infrastructure using SSM and Batch, respectively.
-      </li>
-
-      <li>
-        Added support for integrating AWS ECS services with New Relic APM using
-        a single line of code with Terraform and Terragrunt.
-      </li>
-
-      <li>
-        Implemented AWS SQS queues and supporting IAM policy changes and
-        CloudWatch alarms in Terraform.
-      </li>
-
-      <li>
-        Implemented pre-push hooks and CI pipelines enforcing linting and
-        versioning best practices for multiple Trove codebases.
-      </li>
-
-      <li>
-        Defined KPIs for Trove's Engineering organization, specifying metrics to
-        gather, reporting tools to use, and goals to target.
-      </li>
-
-      <li>
-        Implemented test coverage enforcement and metrics collection for all
-        Trove codebases. Published test coverage reports to AWS S3 for each
-        codebase following every test execution in CI. Generated aggregated test
-        coverage CSV and HTML reports and regularly presented on Engineering's
-        progress to leadership.
-      </li>
-
-      <li>
-        Implemented custom tooling which integrated with the Google Calendar API
-        to measure and visualize how much time Engineering team members spent in
-        meetings on a weekly basis.
-      </li>
-    </ul>
-
-    <span class="company">Trove</span> <span class="years">(2021 - 2022)</span
-    ><br />
-    <span class="title">Staff Software Engineer in Test II</span>
-
-    <ul>
-      <li>
-        Led Test Automation team meetings, including refinement, planning,
-        review, and retrospective agile ceremonies, as well as mob programming
-        sessions.
-      </li>
-
-      <li>
-        Mentored manual QA Engineers, pair programming on a weekly basis while
-        teaching them software development and test automation principles and
-        best practices.
-      </li>
-
-      <li>
-        Designed and led the implementation of a bespoke Page Object Model
-        pattern for all of Trove's end-to-end UI test coverage.
-      </li>
-
-      <li>
-        Designed and implemented Trove's first API contract and integration test
-        harness.
-      </li>
-
-      <li>
-        Migrated the Test Automation team's codebase to a monorepo model,
-        allowing for the addition of an arbitrary number of API, UI, and unit
-        test harnesses. Extracted reusable components into a shared utility
-        subpackage and implemented monorepo-wide static analysis and package
-        management tooling.
-      </li>
-
-      <li>
-        Designed and implemented generic test automation suites which could be
-        easily configured to test any of Trove's partner storefront and in-store
-        trade-in web applications.
-      </li>
-
-      <li>
-        Worked with the Director of Software Quality Engineering to define OKRs
-        for the Test Automation team, more than quadrupling Trove's UI and API
-        test automation coverage over the course of a year.
-      </li>
-
-      <li>
-        Led the effort to implement unit test harnesses and CI test pipelines
-        for all Trove codebases, more than pentupling test coverage in aggregate
-        across all of Trove codebases over the course of a year.
-      </li>
-
-      <li>
-        Specified and led the Test Automation team's effort to migrate from
-        JavaScript to TypeScript. Drafted documentation and implemented
-        automated tooling to ease the migration. In total, a team of 5 migrated
-        33K lines of JavaScript to TypeScript over the course of 3 months
-        without pausing any other workstreams.
-      </li>
-
-      <li>
-        Reworked the Test Automation team's technical interviewing process,
-        providing candidates with a takehome coding challenge starting point
-        which more accurately mirrored the daily work of Test Automation team
-        members.
-      </li>
-
-      <li>
-        Implemented load and performance test coverage and related CI pipelines
-        using Artillery and Bitbucket Pipelines.
-      </li>
-
-      <li>
-        Implemented visual diff test automation harnesses using Cypress and
-        Percy.
-      </li>
-    </ul>
-
-    <span class="company">Simple</span> <span class="years">(2020 - 2021)</span
-    ><br />
-    <span class="title">Quality Assurance Engineer</span>
-
-    <ul>
-      <li>
-        Created an API integration test harness in Python using Pytest and
-        implemented over 100 positive and negative test cases across 11
-        microservices.
-      </li>
-
-      <li>
-        Facilitated weekly workshops covering various software development
-        concepts and practices, including continuous integration/delivery
-        (CI/CD), unit testing, shell scripting, and multiplatform development.
-      </li>
-
-      <li>
-        Provided the QA team with technical leadership, reviewing all pull
-        requests submitted by other members of the team and pair-programming
-        with more junior QA Engineers and Analysts on a weekly basis.
-      </li>
-
-      <li>
-        Increased the Android app's Espresso test coverage in Kotlin by
-        one-third.
-      </li>
-      <li>
-        Reduced code duplication in QA's Cypress test harness by defining
-        section objects which could then be reused across multiple Page Object
-        Models using object composition.
-      </li>
-
-      <li>
-        Converted QA's Cypress test harness from JavaScript to TypeScript.
-      </li>
-      <li>
-        Merged QA's two testing tooling repositories and increased the combined
-        project's unit test coverage by more than half.
-      </li>
-
-      <li>
-        Combined all Cypress test automation harnesses into a single monorepo
-        and reintegrated it into Simple's web applications as a git submodule.
-      </li>
-
-      <li>
-        Reimplemented all QA-owned repositories' Jenkins pipelines as GitHub
-        Actions workflows.
-      </li>
-      <li>Containerized all QA-owned repositories using Docker.</li>
-      <li>
-        Migrated all QA-owned repositories from a GitHub Enterprise instance to
-        GitHub Cloud.
-      </li>
-    </ul>
-
-    <span class="company">Azlo</span> <span class="years">(2019 - 2020)</span
-    ><br />
-    <span class="title">Senior Quality Assurance Engineer</span>
-
-    <ul>
-      <li>
-        Rewrote all automation covering Azlo's customer onboarding web
-        application in TypeScript using Cypress, reducing the suite's test code
-        by more than two-thirds while improving its accuracy, coverage, and
-        reliability.
-      </li>
-
-      <li>
-        Rewrote all preexisting iOS end-to-end tests in Swift using XCTest and
-        tripled the suite's coverage.
-      </li>
-      <li>
-        Tripled the Android app's instrumentation testing coverage in Kotlin
-        using Cucumber and Espresso.
-      </li>
-      <li>
-        Designed and implemented the first end-to-end test automation suite for
-        Azlo's internal CRM web application in TypeScript using Cypress.
-      </li>
-
-      <li>Doubled the iOS app's unit testing coverage.</li>
-      <li>
-        Implemented scripts in Bash enabling all Cypress test automation suites
-        to execute with an arbitrary level of parallelization, both locally and
-        in GitLab CI/CD.
-      </li>
-
-      <li>
-        Rewrote all Cypress jobs run in GitLab CI/CD to run in parallel and
-        cache dependencies to optimize execution time and retryability.
-      </li>
-
-      <li>
-        Rewrote all iOS build and test jobs in GitLab CI/CD to make builds more
-        repeatable and ensure unit and end-to-end tests run more regularly and
-        reliably.
-      </li>
-
-      <li>
-        Combined all Cypress test automation suites into a single monorepo and
-        reintegrated it into Azlo's web applications as a git subtree, replete
-        with bespoke tooling.
-      </li>
-
-      <li>
-        Automated the process of setting up the iOS app repository locally using
-        Bash.
-      </li>
-    </ul>
-
-    <span class="company">Green Bits</span>
-    <span class="years">(2018 - 2019)</span><br />
-    <span class="title">Senior Quality Assurance Engineer & Quality Lead</span>
-
-    <ul>
-      <li>
-        Designed and implemented automated testing suites for all Green Bits web
-        applications in Ruby using Capybara, Cucumber, RSpec, Selenium, and
-        SitePrism.
-      </li>
-
-      <li>Implemented load tests in Python using Locust.</li>
-      <li>Implemented automated iOS tests in Swift using XCTest.</li>
-      <li>
-        Implemented per-commit, post-deploy, hourly, and nightly CircleCI test
-        jobs and workflows.
-      </li>
-      <li>
-        Automated deployments to Kubernetes test and staging environments using
-        Bash, CircleCI, and Helm.
-      </li>
-      <li>
-        Designed and implemented tooling to automate dozens of common tasks
-        required to create, manipulate, and delete test data in Ruby.
-      </li>
-
-      <li>Prototyped a Flutter automated testing suite in Dart.</li>
-      <li>Containerized test harnesses using Docker.</li>
-    </ul>
-
-    <span class="company">Simple</span>
-    <span class="years">(2016 - 2018)</span><br />
-    <span class="title">Quality Assurance Engineer</span>
-
-    <ul>
-      <li>
-        Rewrote all preexisting automated web testing coverage in accordance
-        with behavior-driven development principles in Ruby using Capybara,
-        Cucumber, RSpec, and Selenium.
-      </li>
-
-      <li>
-        Designed and implemented a custom Page Object Model framework from
-        scratch and rewrote all automated web testing coverage to make use of
-        said framework.
-      </li>
-
-      <li>
-        Extended automated test coverage to include all of Simple's web
-        applications and increased the number of use cases covered by more than
-        seven times.
-      </li>
-
-      <li>
-        Designed and implemented tools automating dozens of common tasks
-        required to create, manipulate, and delete test data in both Python and
-        Ruby.
-      </li>
-
-      <li>
-        Monitored backend and third-party API integrations in Simple's test
-        environment for regressions and availability concerns.
-      </li>
-
-      <li>
-        Prototyped mock API servers and web applications in Ruby using Sinatra.
-      </li>
-    </ul>
+      document.addEventListener("DOMContentLoaded", function () {
+        const root = document.getElementById("work-experience-root");
+        ReactDOM.createRoot(root).render(
+          React.createElement(
+            React.Fragment,
+            null,
+            experiences.map((exp, i) =>
+              React.createElement(WorkExperience, {
+                ...exp,
+                key: i,
+                defaultOpen: i === 0,
+              }),
+            ),
+          ),
+        );
+      });
+    </script>
   </body>
 </html>
