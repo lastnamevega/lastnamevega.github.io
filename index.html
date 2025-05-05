@@ -160,33 +160,9 @@
       ><br />
     </div>
 
-    <h3>Programming Languages</h3>
-    <ul class="languages">
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>Shell</li>
-      <li>TypeScript</li>
-    </ul>
-
-    <h3>Frameworks & Tools</h3>
-    <ul class="tools">
-      <li>Cypress</li>
-      <li>DataDog</li>
-      <li>Docker</li>
-      <li>Git</li>
-      <li>GitHub</li>
-      <li>GitHub Actions</li>
-      <li>Jenkins</li>
-      <li>Jest</li>
-      <li>Jira</li>
-      <li>K6</li>
-      <li>Locust</li>
-      <li>Playwright</li>
-      <li>Prisma</li>
-      <li>Pytest</li>
-      <li>TestRail</li>
-      <li>Zephyr</li>
-    </ul>
+    <h3>Technology Experience</h3>
+    <div id="languages-root"></div>
+    <div id="tools-root"></div>
 
     <h3>Work Experience</h3>
     <div id="work-experience-root" class="work-experience"></div>
@@ -202,6 +178,52 @@
     ></script>
     <script>
       const { useState, useEffect } = React;
+
+      function Dropdown({ title, items, defaultOpen }) {
+        const [open, setOpen] = useState(defaultOpen || false);
+
+        // Expand all when printing
+        useEffect(() => {
+          function handleBeforePrint() {
+            setOpen(true);
+          }
+          window.addEventListener("beforeprint", handleBeforePrint);
+          return () =>
+            window.removeEventListener("beforeprint", handleBeforePrint);
+        }, []);
+
+        return React.createElement(
+          "div",
+          { className: `dropdown${open ? " open" : ""}` },
+          React.createElement(
+            "div",
+            {
+              className: "dropdown-header",
+              onClick: () => setOpen((o) => !o),
+            },
+            React.createElement(
+              "span",
+              null,
+              React.createElement("span", { className: "company" }, title),
+            ),
+            React.createElement("span", { className: "arrow" }, "▶"),
+          ),
+          React.createElement(
+            "div",
+            { className: "dropdown-content" },
+            React.createElement(
+              "ul",
+              {
+                className:
+                  title === "Programming Languages" ? "languages" : "tools",
+              },
+              items.map((item, i) =>
+                React.createElement("li", { key: i }, item),
+              ),
+            ),
+          ),
+        );
+      }
 
       function WorkExperience({ company, years, title, bullets, defaultOpen }) {
         const [open, setOpen] = useState(defaultOpen || false);
@@ -389,6 +411,70 @@
               }),
             ),
           ),
+        );
+
+        const languages = [
+          "Bash",
+          "Dart",
+          "Java",
+          "JavaScript",
+          "Kotlin",
+          "Python",
+          "Ruby",
+          "Shell",
+          "Swift",
+          "TypeScript",
+        ];
+
+        const tools = [
+          "Capybara",
+          "CircleCI",
+          "Cucumber",
+          "Cypress",
+          "DataDog",
+          "Docker",
+          "Espresso",
+          "Flutter",
+          "Git",
+          "GitHub",
+          "GitHub Actions",
+          "GitLab CI/CD",
+          "Helm",
+          "Jenkins",
+          "Jest",
+          "Jira",
+          "K6",
+          "Kubernetes",
+          "Locust",
+          "Percy",
+          "Playwright",
+          "Prisma",
+          "Pytest",
+          "RSpec",
+          "Selenium",
+          "Sinatra",
+          "SitePrism",
+          "TestRail",
+          "XCTest",
+          "Zephyr",
+        ];
+
+        const languagesRoot = document.getElementById("languages-root");
+        ReactDOM.createRoot(languagesRoot).render(
+          React.createElement(Dropdown, {
+            title: "Programming Languages",
+            items: languages,
+            defaultOpen: true,
+          }),
+        );
+
+        const toolsRoot = document.getElementById("tools-root");
+        ReactDOM.createRoot(toolsRoot).render(
+          React.createElement(Dropdown, {
+            title: "Frameworks & Tools",
+            items: tools,
+            defaultOpen: true,
+          }),
         );
       });
     </script>
